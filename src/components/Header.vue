@@ -39,7 +39,7 @@ export default {
             <ul class="navbar-nav">
               <li v-for="(item, index) in menuItems" :key="index">
                 <router-link :to="{ name: item.routeName }" class="nav-link">
-                  {{ item.label }}
+                  <h5>{{ item.label }}</h5>
                 </router-link>
               </li>
             </ul>
