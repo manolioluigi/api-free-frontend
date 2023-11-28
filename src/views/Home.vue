@@ -43,7 +43,10 @@ export default {
           <h2 class="my-3 white">Elenco dei post</h2>
           <ul class="d-flex flex-wrap list-unstyled justify-content-between">
             <li v-for="post in posts" :key="post.id">
-              <div class="card my-3">
+              <router-link
+                class="card my-3"
+                :to="{ name: 'postDetail', params: { slug: post.slug } }"
+              >
                 <div class="card-image"><img :src="post.image" alt="" /></div>
                 <div class="category">{{ post.title }}</div>
                 <div class="heading">
@@ -54,7 +57,7 @@ export default {
                     <span>Creato il: </span>{{ this.formatDate(post.createdAt) }}
                   </div>
                 </div>
-              </div>
+              </router-link>
             </li>
           </ul>
         </div>

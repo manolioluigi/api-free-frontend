@@ -28,7 +28,7 @@ export default {
 
 <template>
   <div class="create-post">
-    <div class="container py-5">
+    <div class="container py-4">
       <h2 class="my-3 white">Crea un nuovo post</h2>
       <form @submit.prevent="createPost">
         <div class="mb-3">
