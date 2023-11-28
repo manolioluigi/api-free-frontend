@@ -28,13 +28,13 @@ export default {
 
         <div>
           <router-link class="navbar-brand d-flex" :to="{ name: 'home' }">
-            <img src="../../public/logo.png" class="logo" alt="" />
+            <img src="../../logo.png" class="logo" alt="" />
           </router-link>
         </div>
 
         <!-- Menu -->
 
-        <div>
+        <div class="dropdown">
           <div class="d-none d-lg-block">
             <ul class="navbar-nav">
               <li v-for="(item, index) in menuItems" :key="index">
@@ -56,7 +56,10 @@ export default {
           >
             <i class="fa-solid fa-bars white"></i>
           </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="dropdownMenuButton"
+          >
             <ul class="list-unstyled mb-0 d-flex flex-column align-items-end container">
               <li v-for="(item, index) in menuItems" :key="index">
                 <router-link :to="{ name: item.routeName }" class="nav-link">
@@ -83,9 +86,14 @@ header {
   height: 10vh;
 }
 
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
   position: absolute;
   right: 0;
+  margin-top: 50px;
   background-color: rgb(135, 35, 65);
 }
 
